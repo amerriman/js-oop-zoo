@@ -9,7 +9,7 @@ function Zoo(name, location, status, animals){
 
 Zoo.prototype.changeLocation = function(newLocation){
   this.location = newLocation;
-  return newLocation;
+  // return newLocation;
 };
 
 Zoo.prototype.open = function(){
@@ -33,9 +33,9 @@ Zoo.prototype.isOpen = function(){
 
 Zoo.prototype.addAnimal = function(animal){
   console.log(this.animals);
-  console.log(this.status)
-  console.log(this.animals.indexOf(animal))
-  console.log(animal instanceof Animal)
+  console.log(this.status);
+  console.log(this.animals.indexOf(animal));
+  console.log(animal instanceof Animal);
   if (this.status === "open" && animal instanceof Animal === true && this.animals.indexOf(animal) === -1){
 
     this.animals.push(animal);

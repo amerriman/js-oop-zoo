@@ -14,13 +14,15 @@ describe('Zoo', function(){
 
   describe('#changeLocation', function(){
     it('should change locations', function(){
-      expect(zoo.changeLocation("Denver")).toEqual("Denver");
+      zoo.changeLocation("Denver");
+      expect(zoo.location).toEqual("Denver");
     });
   });
 
   describe('#open', function(){
     it('should change status to open', function(){
-      expect(zoo.open()).toBe("open");
+      zoo.open();
+      expect(zoo.status).toBe("open");
     });
   });
 
@@ -28,11 +30,13 @@ describe('Zoo', function(){
   describe('#isOpen', function(){
     it('should see if the zoo is open', function(){
       zoo.open();
-      expect(zoo.isOpen()).toBe("Open!");
+      zoo.isOpen();
+      expect(zoo.status).toEqual("open");
     });
     it('should see if the zoo is closed', function(){
       zoo.close();
-      expect(zoo.isOpen()).toBe("Closed!");
+      zoo.isOpen();
+      expect(zoo.status).toEqual("closed");
     });
   });
 
@@ -67,7 +71,10 @@ describe('Zoo', function(){
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
       zoo.open();
-      expect(zoo.removeAnimal(zoo.animals, lion)).toEqual([]);
+      zoo.addAnimal(lion);
+      zoo.addAnimal(pig);
+      zoo.removeAnimal(zoo.animals, lion);
+      expect(zoo.animals.length).toEqual(1);
     });
   });
 });

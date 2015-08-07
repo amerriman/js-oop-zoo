@@ -1,3 +1,4 @@
+//Brings in two files - why does one have var, and one not?  Is this janky?
 var Animal = require('../src/animal.js'),
 Zoo = require('../src/zoo.js');
 

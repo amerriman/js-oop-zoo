@@ -1,7 +1,9 @@
+//brings in the animal.js file so the tests can use it
 var Animal = require('../src/animal.js');
 
 var animal;
 
+//below this says what should happen when our animal funcitons run.  Before each function we create a new animal - "beforeEach"
 describe('Animal', function(){
 
   beforeEach(function(){

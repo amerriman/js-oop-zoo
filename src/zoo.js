@@ -1,3 +1,4 @@
+//requires the animal file - why do we not need the .js at the end?
 var Animal = require("./animal");
 
 function Zoo(name, location, status, animals){

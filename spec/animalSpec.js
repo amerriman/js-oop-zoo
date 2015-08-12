@@ -41,7 +41,7 @@ describe('Animal', function(){
 
   describe('#sleep', function(){
     it('should initially be sleeping', function(){
-      animal.sleep()
+      animal.sleep();
       expect(animal.awake).toBe(false);
     });
   });

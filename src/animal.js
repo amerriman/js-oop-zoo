@@ -5,6 +5,7 @@ function Animal(name, age, kind, awake){
   this.awake = false;
 }
 
+//if the animal is a pig, it will oink, otherwise it will tell you it's not a pig
 Animal.prototype.oink = function(){
   if (this.kind === 'Pig'){
     return 'oink';
@@ -13,11 +14,12 @@ Animal.prototype.oink = function(){
   }
 };
 
+//increase the age of the animal by one year
 Animal.prototype.growUp = function(){
   this.age = this.age+1;
-  //return this.age;
 };
 
+//feed the animal if it's awake, but if it's sleeping it will tell you to go away
 Animal.prototype.feed = function(){
   if (this.awake === true){
     return "NOM NOM NOM";
@@ -27,18 +29,14 @@ Animal.prototype.feed = function(){
   }
 };
 
+//wake the animal up
 Animal.prototype.wakeUp = function(){
-  if (this.awake === false){
-    this.awake = true;
-  }
-  //return this.awake;
+  this.awake = true;
 };
 
+//put the animal to sleep
 Animal.prototype.sleep = function(){
- if (this.awake === true){
-    this.awake = false;
-  }
-  //return this.awake;
+  this.awake = false;
 };
 
 module.exports = Animal;

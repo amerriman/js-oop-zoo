@@ -7,21 +7,22 @@ function Zoo(name, location, status, animals){
   this.animals = [];
 }
 
+//changes the location of the zoo
 Zoo.prototype.changeLocation = function(newLocation){
   this.location = newLocation;
-  // return newLocation;
 };
 
+//opens the zoo
 Zoo.prototype.open = function(){
   this.status = "open";
-  return this.status;
 };
 
+//closes the zoo
 Zoo.prototype.close = function(){
   this.status = "closed";
-  return this.status;
 };
 
+//tells you whether to zoo is open or closed
 Zoo.prototype.isOpen = function(){
   if (this.status === "open"){
     return "Open!";
@@ -31,20 +32,14 @@ Zoo.prototype.isOpen = function(){
   }
 };
 
+//adds animal to the zoo as long as the zoo is open, and the animal is an instance of the Animal class, and it's not already in the zoo.
 Zoo.prototype.addAnimal = function(animal){
-  console.log(this.animals);
-  console.log(this.status);
-  console.log(this.animals.indexOf(animal));
-  console.log(animal instanceof Animal);
   if (this.status === "open" && animal instanceof Animal === true && this.animals.indexOf(animal) === -1){
-
     this.animals.push(animal);
   }
-    console.log(this.animals);
-
-  return this.animals;
 };
 
+//removes an animal from the zoo
 Zoo.prototype.removeAnimal = function(animalArray, animal){
   if (this.status === 'open'){
     for (i = 0; i< animalArray.length; i++){
